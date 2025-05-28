@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(sum_strings C)
+project(strreverse C)
 
 file(GLOB sources      main.c)
 
@@ -8,7 +8,7 @@ add_link_options("$<$<NOT:$<CONFIG:Debug>>:/DEBUG>")
 add_link_options("$<$<NOT:$<CONFIG:Debug>>:/OPT:REF>")
 add_link_options("$<$<NOT:$<CONFIG:Debug>>:/OPT:ICF>")
 
-add_executable(sum_strings ${sources})
+add_executable(strreverse ${sources})
 
 # just for example add some compiler flags
-target_compile_options(sum_strings PUBLIC /std:c17)
+target_compile_options(strreverse PUBLIC /std:c17)

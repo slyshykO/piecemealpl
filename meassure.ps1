@@ -1,4 +1,4 @@
-function Measure-Folder($folder)
+function Build-Folder($folder)
 {
 	pushd $folder
 	cd rust
@@ -7,12 +7,21 @@ function Measure-Folder($folder)
 	cmake -S. -Bbuild
 	cmake --build build --config Release
 	cd ..
-
-	ls c/build/Release/*.exe | Select-Object Name, Length
-	ls rust/target/release/*.exe | Select-Object Name, Length
-
 	popd
 }
 
-Measure-Folder "baseline"
-Measure-Folder "sum-strings"
+function Measure-Folder($folder)
+{
+	ls $folder/c/build/Release/*.exe | Select-Object Name, Length
+	ls $folder/rust/target/release/*.exe | Select-Object Name, Length
+}
+
+$experiments = @("baseline", "sum-strings", "parse_float", "strreverse")
+foreach ($experiment in $experiments) {
+	Build-Folder $experiment
+}
+
+foreach ($experiment in $experiments) {
+	Measure-Folder $experiment
+}
+
