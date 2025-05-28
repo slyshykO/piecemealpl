@@ -5,6 +5,13 @@ The goal of this experiement is to measure, what primitive software concepts wei
 I attempt to have more or less idiomatic code, and not something which people will use when they optimize for size.
 Let's call it typical low effor code.
 
+Right now I have only lowlevel operation in the code. But really would like to measure different level of abstractions.
+Let's say what it take to ZIP archive, how much code needed to make 1 HTTP request, how much code needed to create empty UI window,
+what code takes to make button, etc. It can be ambiguous, but if start with simple things, and craft sentences more detailed we can 
+probably capture enough interesting information to guess why our software sometimes can take hundreds of megabytes, and why 
+our dependencies in some languages can take gigabytes even for relatively simple applications. To have more concrete explanation, 
+and not abstract "because we don't care about dependencies". That's not actionable IMO.
+
 # How to run
 ```
 ./measure.ps1
