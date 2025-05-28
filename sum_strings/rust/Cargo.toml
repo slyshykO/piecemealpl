@@ -1,5 +1,5 @@
 [package]
-name = "sum-strings"
+name = "sum_strings"
 version = "0.1.0"
 edition = "2021"
 

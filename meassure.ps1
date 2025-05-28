@@ -6,6 +6,8 @@ function Build-Folder($folder)
 	cd ../c
 	cmake -S. -Bbuild
 	cmake --build build --config Release
+	cd ../naot
+	dotnet publish
 	cd ..
 	popd
 }
@@ -14,9 +16,10 @@ function Measure-Folder($folder)
 {
 	ls $folder/c/build/Release/*.exe | Select-Object Name, Length
 	ls $folder/rust/target/release/*.exe | Select-Object Name, Length
+	ls $folder/naot/bin/Release/net10.0/win-x64/publish/*.exe | Select-Object Name, Length
 }
 
-$experiments = @("baseline", "sum-strings", "parse_float", "strreverse", "tolower", "strempty")
+$experiments = @("baseline", "sum_strings", "parse_float", "strreverse", "tolower", "strempty")
 foreach ($experiment in $experiments) {
 	Build-Folder $experiment
 }
