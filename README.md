@@ -17,6 +17,7 @@ Let's call it typical low effor code.
 - [StrReverse](./strreverse) Reverse constant string
 - [ToLower](./tolower) Convert string to lowercase using default locale parameters in the langugage.
 - [StrEmpty](./strempty) Check that string is empty.
+- [ArrayInit](./arrayinit) Initialize array of 100 bytes and print all 100 of them.
 
 # Results
 
@@ -29,6 +30,7 @@ Let's call it typical low effor code.
 | StrReverse | 0B |
 | ToLower | 1024B |
 | StrEmpty | 512B |
+| ArrayInit | 0B |
 
 ## Rust language basics
 | Component | Size |
@@ -39,6 +41,7 @@ Let's call it typical low effor code.
 | StrReverse | 1024B |
 | ToLower | 17408B |
 | StrEmpty | 0B |
+| ArrayInit | 512B |
 
 ## C# NativeAOT language basics
 | Component | Size |
@@ -49,6 +52,7 @@ Let's call it typical low effor code.
 | StrReverse | 14336B |
 | ToLower | 2560B |
 | StrEmpty | 0B |
+| ArrayInit | 3584B |
 
 ## Go language basics
 | Component | Size |
@@ -59,3 +63,4 @@ Let's call it typical low effor code.
 | StrReverse | 2560B |
 | ToLower | 13312B |
 | StrEmpty | -512B |
+| ArrayInit | 512B |

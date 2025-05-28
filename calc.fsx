@@ -39,6 +39,8 @@ module App =
     let ToLower = 4
     [<Literal>]
     let StrEmpty = 5
+    [<Literal>]
+    let ArrayInit = 6
 
 
 module Components =
@@ -54,8 +56,10 @@ module Components =
     let ToLower = 4
     [<Literal>]
     let StrEmpty = 5
+    [<Literal>]
+    let ArrayInit = 6
 
-let m = Matrix<float>.Build.Dense(6 (*apps*), 6 (*components*))
+let m = Matrix<float>.Build.Dense(7 (*apps*), 7 (*components*))
 m[App.Baseline, Components.Runtime] <- 1.0
 m[App.SumStrings,Components.Runtime] <- 1.0
 m[App.SumStrings,Components.SumStrings] <- 1.0
@@ -67,6 +71,8 @@ m[App.ToLower,Components.Runtime] <- 1.0
 m[App.ToLower,Components.ToLower] <- 1.0
 m[App.StrEmpty,Components.Runtime] <- 1.0
 m[App.StrEmpty,Components.StrEmpty] <- 1.0
+m[App.ArrayInit,Components.Runtime] <- 1.0
+m[App.ArrayInit,Components.ArrayInit] <- 1.0
 
 // C values
 let cParams = vector [
@@ -76,6 +82,7 @@ let cParams = vector [
     10752.; // StrReverse
     11776.; // ToLower
     11264.; // StrEmpty
+    10752.; // ArrayInit
 ]
 
 // Rust values
@@ -86,6 +93,7 @@ let rustParams = vector [
     139264.; // StrReverse
     155648.; // ToLower
     138240.; // StrEmpty
+    138752.; // ArrayInit
 ]
 
 // Naot values
@@ -96,6 +104,7 @@ let naotParams = vector [
     1119744.; // StrReverse
     1107968.; // ToLower
     1105408.; // StrEmpty
+    1108992.; // ArrayInit
 ]
 
 // Go values
@@ -106,6 +115,7 @@ let goParams = vector [
     1272832.; // StrReverse
     1283584.; // ToLower
     1269760.; // StrEmpty
+    1270784.; // ArrayInit
 ]
 
 Vector<float>.Build.Dense(6 (*components*))
@@ -125,6 +135,7 @@ let printComponents header (cComponents: Vector<float>) =
     printfn "| StrReverse | %.0fB |" cComponents[Components.StrReverse]
     printfn "| ToLower | %.0fB |" cComponents[Components.ToLower]
     printfn "| StrEmpty | %.0fB |" cComponents[Components.StrEmpty]
+    printfn "| ArrayInit | %.0fB |" cComponents[Components.ArrayInit]
 
 printComponents "C language basics" cComponents
 printComponents "Rust language basics" rustComponents
