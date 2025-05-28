@@ -19,6 +19,7 @@ Let's call it typical low effor code.
 - [StrEmpty](./strempty) Check that string is empty.
 - [ArrayInit](./arrayinit) Initialize array of 100 bytes and print all 100 of them.
 - [CmdLineArgs](./cmdlineargs) Printing all passed command line args
+- [ReadFile](./readfile) Read file to the console
 
 # Results
 
@@ -36,6 +37,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | StrEmpty   | 512 |
 | ArrayInit  | 0 |
 | CmdLineArgs| 0 |
+| ReadFile   | 512 |
 
 ## Rust language basics
 | Component    | Size (B) |
@@ -48,6 +50,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | StrEmpty   | 0 |
 | ArrayInit  | 512 |
 | CmdLineArgs| 9216 |
+| ReadFile   | 13312 |
 
 ## C# NativeAOT language basics
 | Component    | Size (B) |
@@ -60,6 +63,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | StrEmpty   | 0 |
 | ArrayInit  | 3584 |
 | CmdLineArgs| 512 |
+| ReadFile   | 122880 |
 
 ## Go language basics
 | Component    | Size (B) |
@@ -72,3 +76,4 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | StrEmpty   | -512 |
 | ArrayInit  | 512 |
 | CmdLineArgs| 0 |
+| ReadFile   | 129024 |

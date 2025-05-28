@@ -22,8 +22,9 @@ function Measure-Folder($folder)
 	ls $folder/go/out/*.exe | Select-Object Name, Length
 }
 
-$experiments = @("baseline", "sum_strings", "parse_float", "strreverse", "tolower", "strempty", "arrayinit", "cmdlineargs")
-$experiments = @("cmdlineargs")
+$experiments = @("baseline", "sum_strings", "parse_float", "strreverse", "tolower", "strempty", "arrayinit", "cmdlineargs",
+	"readfile")
+#$experiments = @("readfile")
 foreach ($experiment in $experiments) {
 	Build-Folder $experiment
 }

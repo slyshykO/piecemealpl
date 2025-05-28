@@ -43,6 +43,8 @@ module App =
     let ArrayInit = 6
     [<Literal>]
     let CmdLineArgs = 7
+    [<Literal>]
+    let ReadFile = 8
 
 
 module Components =
@@ -62,8 +64,10 @@ module Components =
     let ArrayInit = 6
     [<Literal>]
     let CmdLineArgs = 7
+    [<Literal>]
+    let ReadFile = 8
 
-let m = Matrix<float>.Build.Dense(8 (*apps*), 8 (*components*))
+let m = Matrix<float>.Build.Dense(9 (*apps*), 9 (*components*))
 m[App.Baseline, Components.Runtime] <- 1.0
 m[App.SumStrings,Components.Runtime] <- 1.0
 m[App.SumStrings,Components.SumStrings] <- 1.0
@@ -79,6 +83,8 @@ m[App.ArrayInit,Components.Runtime] <- 1.0
 m[App.ArrayInit,Components.ArrayInit] <- 1.0
 m[App.CmdLineArgs,Components.Runtime] <- 1.0
 m[App.CmdLineArgs,Components.CmdLineArgs] <- 1.0
+m[App.ReadFile,Components.Runtime] <- 1.0
+m[App.ReadFile,Components.ReadFile] <- 1.0
 
 // C values
 let cParams = vector [
@@ -90,6 +96,7 @@ let cParams = vector [
     11264.; // StrEmpty
     10752.; // ArrayInit
     10752.; // CmdLineArgs
+    11264.; // ReadFile
 ]
 
 // Rust values
@@ -102,6 +109,7 @@ let rustParams = vector [
     138240.; // StrEmpty
     138752.; // ArrayInit
     147456.; // CmdLineArgs
+    151552.; // ReadFile
 ]
 
 // Naot values
@@ -114,6 +122,7 @@ let naotParams = vector [
     1105408.; // StrEmpty
     1108992.; // ArrayInit
     1105920.; // CmdLineArgs
+    1228288.; // ReadFile
 ]
 
 // Go values
@@ -126,6 +135,7 @@ let goParams = vector [
     1269760.; // StrEmpty
     1270784.; // ArrayInit
     1270272.; // CmdLineArgs
+    1399296.; // ReadFile
 ]
 
 Vector<float>.Build.Dense(6 (*components*))
@@ -147,6 +157,7 @@ let printComponents header (cComponents: Vector<float>) =
     printfn "| StrEmpty   | %.0f |" cComponents[Components.StrEmpty]
     printfn "| ArrayInit  | %.0f |" cComponents[Components.ArrayInit]
     printfn "| CmdLineArgs| %.0f |" cComponents[Components.CmdLineArgs]
+    printfn "| ReadFile   | %.0f |" cComponents[Components.ReadFile]
 
 printComponents "C language basics" cComponents
 printComponents "Rust language basics" rustComponents
