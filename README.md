@@ -18,6 +18,7 @@ Let's call it typical low effor code.
 - [ToLower](./tolower) Convert string to lowercase using default locale parameters in the langugage.
 - [StrEmpty](./strempty) Check that string is empty.
 - [ArrayInit](./arrayinit) Initialize array of 100 bytes and print all 100 of them.
+- [CmdLineArgs](./cmdlineargs) Printing all passed command line args
 
 # Results
 
@@ -25,45 +26,49 @@ The 0 or negative numbers mean that I cannot reliably measure or guess that size
 Obviosuly that feature have non zero size. Probably I overcalculate size of the runtime + minimal main functoin, and code which needed for that already alllocated.
 
 ## C language basics
-| Component | Size |
+| Component    | Size (B) |
 | ------------ | -----: |
-| Runtime | 10752B |
-| SumStrings | 1024B |
-| ParseFloat | 0B |
-| StrReverse | 0B |
-| ToLower | 1024B |
-| StrEmpty | 512B |
-| ArrayInit | 0B |
+| Runtime    | 10752 |
+| SumStrings | 1024 |
+| ParseFloat | 0 |
+| StrReverse | 0 |
+| ToLower    | 1024 |
+| StrEmpty   | 512 |
+| ArrayInit  | 0 |
+| CmdLineArgs| 0 |
 
 ## Rust language basics
-| Component | Size |
+| Component    | Size (B) |
 | ------------ | -----: |
-| Runtime | 138240B |
-| SumStrings | 512B |
-| ParseFloat | 17408B |
-| StrReverse | 1024B |
-| ToLower | 17408B |
-| StrEmpty | 0B |
-| ArrayInit | 512B |
+| Runtime    | 138240 |
+| SumStrings | 512 |
+| ParseFloat | 17408 |
+| StrReverse | 1024 |
+| ToLower    | 17408 |
+| StrEmpty   | 0 |
+| ArrayInit  | 512 |
+| CmdLineArgs| 9216 |
 
 ## C# NativeAOT language basics
-| Component | Size |
+| Component    | Size (B) |
 | ------------ | -----: |
-| Runtime | 1105408B |
-| SumStrings | 512B |
-| ParseFloat | 26112B |
-| StrReverse | 14336B |
-| ToLower | 2560B |
-| StrEmpty | 0B |
-| ArrayInit | 3584B |
+| Runtime    | 1105408 |
+| SumStrings | 512 |
+| ParseFloat | 26112 |
+| StrReverse | 14336 |
+| ToLower    | 2560 |
+| StrEmpty   | 0 |
+| ArrayInit  | 3584 |
+| CmdLineArgs| 512 |
 
 ## Go language basics
-| Component | Size |
+| Component    | Size (B) |
 | ------------ | -----: |
-| Runtime | 1270272B |
-| SumStrings | 13312B |
-| ParseFloat | 18432B |
-| StrReverse | 2560B |
-| ToLower | 13312B |
-| StrEmpty | -512B |
-| ArrayInit | 512B |
+| Runtime    | 1270272 |
+| SumStrings | 13312 |
+| ParseFloat | 18432 |
+| StrReverse | 2560 |
+| ToLower    | 13312 |
+| StrEmpty   | -512 |
+| ArrayInit  | 512 |
+| CmdLineArgs| 0 |

@@ -41,6 +41,8 @@ module App =
     let StrEmpty = 5
     [<Literal>]
     let ArrayInit = 6
+    [<Literal>]
+    let CmdLineArgs = 7
 
 
 module Components =
@@ -58,8 +60,10 @@ module Components =
     let StrEmpty = 5
     [<Literal>]
     let ArrayInit = 6
+    [<Literal>]
+    let CmdLineArgs = 7
 
-let m = Matrix<float>.Build.Dense(7 (*apps*), 7 (*components*))
+let m = Matrix<float>.Build.Dense(8 (*apps*), 8 (*components*))
 m[App.Baseline, Components.Runtime] <- 1.0
 m[App.SumStrings,Components.Runtime] <- 1.0
 m[App.SumStrings,Components.SumStrings] <- 1.0
@@ -73,6 +77,8 @@ m[App.StrEmpty,Components.Runtime] <- 1.0
 m[App.StrEmpty,Components.StrEmpty] <- 1.0
 m[App.ArrayInit,Components.Runtime] <- 1.0
 m[App.ArrayInit,Components.ArrayInit] <- 1.0
+m[App.CmdLineArgs,Components.Runtime] <- 1.0
+m[App.CmdLineArgs,Components.CmdLineArgs] <- 1.0
 
 // C values
 let cParams = vector [
@@ -83,6 +89,7 @@ let cParams = vector [
     11776.; // ToLower
     11264.; // StrEmpty
     10752.; // ArrayInit
+    10752.; // CmdLineArgs
 ]
 
 // Rust values
@@ -94,6 +101,7 @@ let rustParams = vector [
     155648.; // ToLower
     138240.; // StrEmpty
     138752.; // ArrayInit
+    147456.; // CmdLineArgs
 ]
 
 // Naot values
@@ -105,6 +113,7 @@ let naotParams = vector [
     1107968.; // ToLower
     1105408.; // StrEmpty
     1108992.; // ArrayInit
+    1105920.; // CmdLineArgs
 ]
 
 // Go values
@@ -116,6 +125,7 @@ let goParams = vector [
     1283584.; // ToLower
     1269760.; // StrEmpty
     1270784.; // ArrayInit
+    1270272.; // CmdLineArgs
 ]
 
 Vector<float>.Build.Dense(6 (*components*))
@@ -127,15 +137,16 @@ let goComponents = m.Solve(goParams)
 let printComponents header (cComponents: Vector<float>) =
     printfn ""
     printfn "## %s" header
-    printfn "| Component | Size |"
+    printfn "| Component    | Size (B) |"
     printfn "| ------------ | -----: |"
-    printfn "| Runtime | %.0fB |" cComponents[Components.Runtime]
-    printfn "| SumStrings | %.0fB |" cComponents[Components.SumStrings]
-    printfn "| ParseFloat | %.0fB |" cComponents[Components.ParseFloat]
-    printfn "| StrReverse | %.0fB |" cComponents[Components.StrReverse]
-    printfn "| ToLower | %.0fB |" cComponents[Components.ToLower]
-    printfn "| StrEmpty | %.0fB |" cComponents[Components.StrEmpty]
-    printfn "| ArrayInit | %.0fB |" cComponents[Components.ArrayInit]
+    printfn "| Runtime    | %.0f |" cComponents[Components.Runtime]
+    printfn "| SumStrings | %.0f |" cComponents[Components.SumStrings]
+    printfn "| ParseFloat | %.0f |" cComponents[Components.ParseFloat]
+    printfn "| StrReverse | %.0f |" cComponents[Components.StrReverse]
+    printfn "| ToLower    | %.0f |" cComponents[Components.ToLower]
+    printfn "| StrEmpty   | %.0f |" cComponents[Components.StrEmpty]
+    printfn "| ArrayInit  | %.0f |" cComponents[Components.ArrayInit]
+    printfn "| CmdLineArgs| %.0f |" cComponents[Components.CmdLineArgs]
 
 printComponents "C language basics" cComponents
 printComponents "Rust language basics" rustComponents
