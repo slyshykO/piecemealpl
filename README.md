@@ -10,6 +10,14 @@ Let's call it typical low effor code.
 ./measure.ps1
 ```
 
+# Components
+
+- [SumStrings](./sum_strings) The perform concatenation of two string types in the language.
+- [ParseFloat](./parse_float) Parse string with float value into float32 datatype.
+- [StrReverse](./strreverse) Reverse constant string
+- [ToLower](./tolower) Convert string to lowercase using default locale parameters in the langugage.
+- [StrEmpty](./strempty) Check that string is empty.
+
 # Results
 
 ## C language basics
