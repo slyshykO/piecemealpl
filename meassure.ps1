@@ -16,7 +16,7 @@ function Measure-Folder($folder)
 	ls $folder/rust/target/release/*.exe | Select-Object Name, Length
 }
 
-$experiments = @("baseline", "sum-strings", "parse_float", "strreverse")
+$experiments = @("baseline", "sum-strings", "parse_float", "strreverse", "tolower", "strempty")
 foreach ($experiment in $experiments) {
 	Build-Folder $experiment
 }
