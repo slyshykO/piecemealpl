@@ -12,6 +12,8 @@ probably capture enough interesting information to guess why our software someti
 our dependencies in some languages can take gigabytes even for relatively simple applications. To have more concrete explanation, 
 and not abstract "because we don't care about dependencies". That's not actionable IMO.
 
+If you agree to help with this very mundane process, please submit PR.
+
 [Українською](./README_uk.md)
 
 # How to run
