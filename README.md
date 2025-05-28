@@ -31,3 +31,23 @@ Let's call it typical low effor code.
 | StrReverse | 1024B |
 | ToLower | 17408B |
 | StrEmpty | 0B |
+
+## C# NativeAOT language basics
+| Component | Size |
+| ------------ | -----: |
+| Runtime | 1105408B |
+| SumStrings | 512B |
+| ParseFloat | 26112B |
+| StrReverse | 14336B |
+| ToLower | 2560B |
+| StrEmpty | 0B |
+
+## Go language basics
+| Component | Size |
+| ------------ | -----: |
+| Runtime | 1270272B |
+| SumStrings | 13312B |
+| ParseFloat | 18432B |
+| StrReverse | 2560B |
+| ToLower | 13312B |
+| StrEmpty | -512B |

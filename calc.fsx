@@ -98,11 +98,22 @@ let naotParams = vector [
     1105408.; // StrEmpty
 ]
 
+// Go values
+let goParams = vector [
+    1270272.; // Baseline
+    1283584.; // SumStrings
+    1288704.; // ParseFloat
+    1272832.; // StrReverse
+    1283584.; // ToLower
+    1269760.; // StrEmpty
+]
+
 Vector<float>.Build.Dense(6 (*components*))
 
 let cComponents = m.Solve(cParams)
 let rustComponents = m.Solve(rustParams)
 let naotComponents = m.Solve(naotParams)
+let goComponents = m.Solve(goParams)
 let printComponents header (cComponents: Vector<float>) =
     printfn ""
     printfn "## %s" header
@@ -118,3 +129,4 @@ let printComponents header (cComponents: Vector<float>) =
 printComponents "C language basics" cComponents
 printComponents "Rust language basics" rustComponents
 printComponents "C# NativeAOT language basics" naotComponents
+printComponents "Go language basics" goComponents
