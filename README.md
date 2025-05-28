@@ -21,6 +21,9 @@ Let's call it typical low effor code.
 
 # Results
 
+The 0 or negative numbers mean that I cannot reliably measure or guess that size. 
+Obviosuly that feature have non zero size. Probably I overcalculate size of the runtime + minimal main functoin, and code which needed for that already alllocated.
+
 ## C language basics
 | Component | Size |
 | ------------ | -----: |
