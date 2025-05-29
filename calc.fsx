@@ -47,6 +47,8 @@ module App =
     let ReadFile = 8
     [<Literal>]
     let ZipFile = 9
+    [<Literal>]
+    let CreateFile = 10
 
 
 module Components =
@@ -70,8 +72,10 @@ module Components =
     let ReadFile = 8
     [<Literal>]
     let ZipFile = 9
+    [<Literal>]
+    let CreateFile = 10
 
-let m = Matrix<float>.Build.Dense(10 (*apps*), 10 (*components*))
+let m = Matrix<float>.Build.Dense(11 (*apps*), 11 (*components*))
 m[App.Baseline, Components.Runtime] <- 1.0
 m[App.SumStrings,Components.Runtime] <- 1.0
 m[App.SumStrings,Components.SumStrings] <- 1.0
@@ -90,7 +94,10 @@ m[App.CmdLineArgs,Components.CmdLineArgs] <- 1.0
 m[App.ReadFile,Components.Runtime] <- 1.0
 m[App.ReadFile,Components.ReadFile] <- 1.0
 m[App.ZipFile,Components.Runtime] <- 1.0
+m[App.ZipFile,Components.CreateFile] <- 1.0
 m[App.ZipFile,Components.ZipFile] <- 1.0
+m[App.CreateFile,Components.Runtime] <- 1.0
+m[App.CreateFile,Components.CreateFile] <- 1.0
 
 // C values
 let cParams = vector [
@@ -104,6 +111,7 @@ let cParams = vector [
     10752.; // CmdLineArgs
     11264.; // ReadFile
     11264.; // ZipFile
+    10752.; // CreateFile
 ]
 
 // Rust values
@@ -118,6 +126,7 @@ let rustParams = vector [
     147456.; // CmdLineArgs
     151552.; // ReadFile
     1074176.; // ZipFile
+    146432.; // CreateFile
 ]
 
 // Naot values
@@ -132,6 +141,7 @@ let naotParams = vector [
     1105920.; // CmdLineArgs
     1228288.; // ReadFile
     2117632.; // ZipFile
+    1210368.; // CreateFile
 ]
 
 // Go values
@@ -144,8 +154,9 @@ let goParams = vector [
     1269760.; // StrEmpty
     1270784.; // ArrayInit
     1270272.; // CmdLineArgs
-    1399296.; // ReadFile
+    1377792.; // ReadFile
     1610240.; // ZipFile
+    1278464.; // CreateFile
 ]
 
 Vector<float>.Build.Dense(6 (*components*))
@@ -169,6 +180,7 @@ let printComponents header (cComponents: Vector<float>) =
     printfn "| CmdLineArgs| %.0f |" cComponents[Components.CmdLineArgs]
     printfn "| ReadFile   | %.0f |" cComponents[Components.ReadFile]
     printfn "| ZipFile    | %.0f |" cComponents[Components.ZipFile]
+    printfn "| CreateFile | %.0f |" cComponents[Components.CreateFile]
 
 printComponents "C language basics" cComponents
 printComponents "Rust language basics" rustComponents

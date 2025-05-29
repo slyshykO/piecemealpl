@@ -1,10 +1,19 @@
+param(
+	$Experiment
+)
 function Build-Folder($folder)
 {
+	echo "===== Building $folder ====="
 	pushd $folder
 	cd rust
 	cargo build -r
 	cd ../c
-	cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
+	if (Test-Path "vcpkg.json") {
+		cmake -S. -Bbuild -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
+	} else {
+		cmake -S. -Bbuild
+	}
+	
 	cmake --build build --config Release
 	cd ../naot
 	dotnet publish
@@ -27,8 +36,11 @@ if (-not $env:VCPKG_ROOT) {
 }
 
 $experiments = @("baseline", "sum_strings", "parse_float", "strreverse", "tolower", "strempty", "arrayinit", "cmdlineargs",
-	"readfile", "archivefile")
-$experiments = @("archivefile")
+	"readfile", "archivefile", "createfile")
+if ($Experiment) {
+		$experiments = @($Experiment)
+}
+#$experiments = @("createfile")
 foreach ($experiment in $experiments) {
 	Build-Folder $experiment
 }

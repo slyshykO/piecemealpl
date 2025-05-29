@@ -32,6 +32,7 @@ If you agree to help with this very mundane process, please submit PR.
 - [CmdLineArgs](./cmdlineargs) Printing all passed command line args
 - [ReadFile](./readfile) Read file to the console
 - [ZipFile](./archivefile) Archive string into single file packaged into ZIP file.
+- [CreateFile](./createfile) Create empty file with the given name.
 
 # Results
 
@@ -51,6 +52,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | CmdLineArgs| 0 |
 | ReadFile   | 512 |
 | ZipFile    | 512 |
+| CreateFile | 0 |
 
 ## Rust language basics
 | Component    | Size (B) |
@@ -64,7 +66,8 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | ArrayInit  | 512 |
 | CmdLineArgs| 9216 |
 | ReadFile   | 13312 |
-| ZipFile    | 935936 |
+| ZipFile    | 927744 |
+| CreateFile | 8192 |
 
 ## C# NativeAOT language basics
 | Component    | Size (B) |
@@ -78,7 +81,8 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | ArrayInit  | 3584 |
 | CmdLineArgs| 512 |
 | ReadFile   | 122880 |
-| ZipFile    | 1012224 |
+| ZipFile    | 907264 |
+| CreateFile | 104960 |
 
 ## Go language basics
 | Component    | Size (B) |
@@ -91,5 +95,6 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | StrEmpty   | -512 |
 | ArrayInit  | 512 |
 | CmdLineArgs| 0 |
-| ReadFile   | 129024 |
-| ZipFile    | 339968 |
+| ReadFile   | 107520 |
+| ZipFile    | 331776 |
+| CreateFile | 8192 |
