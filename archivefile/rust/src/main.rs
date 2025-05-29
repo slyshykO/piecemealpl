@@ -10,7 +10,7 @@ fn main() {
     let options = SimpleFileOptions::default()
         .compression_method(zip::CompressionMethod::Stored)
         .unix_permissions(0o755);
-    zip.start_file("test.csv", options).unwrap();
+    zip.start_file("hello.txt", options).unwrap();
     zip.write_all(b"Hello World!").unwrap();
 
     zip.finish().unwrap();

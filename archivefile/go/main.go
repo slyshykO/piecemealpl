@@ -15,12 +15,6 @@ func main() {
 	defer archive.Close()
 
 	zipWriter := zip.NewWriter(archive)
-	f1, err := os.Open("test.csv")
-	if err != nil {
-		panic(err)
-	}
-	defer f1.Close()
-
 	w1,err := zipWriter.Create ("hello.txt")
 	if err!=nil {
 		panic(err)
