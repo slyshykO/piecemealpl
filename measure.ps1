@@ -9,7 +9,7 @@ function Build-Folder($folder)
 	cargo build -r
 	cd ../c
 	if (Test-Path "vcpkg.json") {
-		cmake -S. -Bbuild -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
+		cmake -S. -Bbuild -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-windows-static
 	} else {
 		cmake -S. -Bbuild
 	}

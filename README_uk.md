@@ -55,7 +55,7 @@
 | ArrayInit  | 0 |
 | CmdLineArgs| 0 |
 | ReadFile   | 512 |
-| ZipFile    | 512 |
+| ZipFile    | 190464 |
 | CreateFile | 0 |
 
 ## Rust language basics

@@ -110,7 +110,7 @@ let cParams = vector [
     10752.; // ArrayInit
     10752.; // CmdLineArgs
     11264.; // ReadFile
-    11264.; // ZipFile
+    201216.; // ZipFile
     10752.; // CreateFile
 ]
 
