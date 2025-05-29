@@ -45,6 +45,8 @@ module App =
     let CmdLineArgs = 7
     [<Literal>]
     let ReadFile = 8
+    [<Literal>]
+    let ZipFile = 9
 
 
 module Components =
@@ -66,8 +68,10 @@ module Components =
     let CmdLineArgs = 7
     [<Literal>]
     let ReadFile = 8
+    [<Literal>]
+    let ZipFile = 9
 
-let m = Matrix<float>.Build.Dense(9 (*apps*), 9 (*components*))
+let m = Matrix<float>.Build.Dense(10 (*apps*), 10 (*components*))
 m[App.Baseline, Components.Runtime] <- 1.0
 m[App.SumStrings,Components.Runtime] <- 1.0
 m[App.SumStrings,Components.SumStrings] <- 1.0
@@ -85,6 +89,8 @@ m[App.CmdLineArgs,Components.Runtime] <- 1.0
 m[App.CmdLineArgs,Components.CmdLineArgs] <- 1.0
 m[App.ReadFile,Components.Runtime] <- 1.0
 m[App.ReadFile,Components.ReadFile] <- 1.0
+m[App.ZipFile,Components.Runtime] <- 1.0
+m[App.ZipFile,Components.ZipFile] <- 1.0
 
 // C values
 let cParams = vector [
@@ -97,6 +103,7 @@ let cParams = vector [
     10752.; // ArrayInit
     10752.; // CmdLineArgs
     11264.; // ReadFile
+    11264.; // ZipFile
 ]
 
 // Rust values
@@ -110,6 +117,7 @@ let rustParams = vector [
     138752.; // ArrayInit
     147456.; // CmdLineArgs
     151552.; // ReadFile
+    1074176.; // ZipFile
 ]
 
 // Naot values
@@ -123,6 +131,7 @@ let naotParams = vector [
     1108992.; // ArrayInit
     1105920.; // CmdLineArgs
     1228288.; // ReadFile
+    2117632.; // ZipFile
 ]
 
 // Go values
@@ -136,6 +145,7 @@ let goParams = vector [
     1270784.; // ArrayInit
     1270272.; // CmdLineArgs
     1399296.; // ReadFile
+    1610240.; // ZipFile
 ]
 
 Vector<float>.Build.Dense(6 (*components*))
@@ -158,6 +168,7 @@ let printComponents header (cComponents: Vector<float>) =
     printfn "| ArrayInit  | %.0f |" cComponents[Components.ArrayInit]
     printfn "| CmdLineArgs| %.0f |" cComponents[Components.CmdLineArgs]
     printfn "| ReadFile   | %.0f |" cComponents[Components.ReadFile]
+    printfn "| ZipFile    | %.0f |" cComponents[Components.ZipFile]
 
 printComponents "C language basics" cComponents
 printComponents "Rust language basics" rustComponents

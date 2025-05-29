@@ -4,3 +4,4 @@ out/
 .vs/
 bin/
 obj/
+vcpkg_installed/

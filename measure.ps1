@@ -4,7 +4,7 @@ function Build-Folder($folder)
 	cd rust
 	cargo build -r
 	cd ../c
-	cmake -S. -Bbuild
+	cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake"
 	cmake --build build --config Release
 	cd ../naot
 	dotnet publish
@@ -22,9 +22,13 @@ function Measure-Folder($folder)
 	ls $folder/go/out/*.exe | Select-Object Name, Length
 }
 
+if (-not $env:VCPKG_ROOT) {
+	$env:VCPKG_ROOT = "C:\Program Files\Microsoft Visual Studio\2022\Preview\VC\vcpkg"
+}
+
 $experiments = @("baseline", "sum_strings", "parse_float", "strreverse", "tolower", "strempty", "arrayinit", "cmdlineargs",
-	"readfile")
-#$experiments = @("readfile")
+	"readfile", "archivefile")
+$experiments = @("archivefile")
 foreach ($experiment in $experiments) {
 	Build-Folder $experiment
 }

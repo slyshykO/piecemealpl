@@ -34,6 +34,7 @@
 - [ArrayInit](./arrayinit) Ініціалізувати масив 100 байт і надрукувати усі 100 значень.
 - [CmdLineArgs](./cmdlineargs) Надрукувати усі передані аргументи командного рядку
 - [ReadFile](./readfile) Прочитати весь файл в консоль
+- [ZipFile](./archivefile) Архівує рядок у один файл запакований в ZIP файл.
 
 # Результати
 
@@ -53,6 +54,7 @@
 | ArrayInit  | 0 |
 | CmdLineArgs| 0 |
 | ReadFile   | 512 |
+| ZipFile    | 512 |
 
 ## Rust language basics
 | Component    | Size (B) |
@@ -66,6 +68,7 @@
 | ArrayInit  | 512 |
 | CmdLineArgs| 9216 |
 | ReadFile   | 13312 |
+| ZipFile    | 935936 |
 
 ## C# NativeAOT language basics
 | Component    | Size (B) |
@@ -79,6 +82,7 @@
 | ArrayInit  | 3584 |
 | CmdLineArgs| 512 |
 | ReadFile   | 122880 |
+| ZipFile    | 1012224 |
 
 ## Go language basics
 | Component    | Size (B) |
@@ -92,3 +96,4 @@
 | ArrayInit  | 512 |
 | CmdLineArgs| 0 |
 | ReadFile   | 129024 |
+| ZipFile    | 339968 |

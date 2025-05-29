@@ -31,6 +31,7 @@ If you agree to help with this very mundane process, please submit PR.
 - [ArrayInit](./arrayinit) Initialize array of 100 bytes and print all 100 of them.
 - [CmdLineArgs](./cmdlineargs) Printing all passed command line args
 - [ReadFile](./readfile) Read file to the console
+- [ZipFile](./archivefile) Archive string into single file packaged into ZIP file.
 
 # Results
 
@@ -49,6 +50,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | ArrayInit  | 0 |
 | CmdLineArgs| 0 |
 | ReadFile   | 512 |
+| ZipFile    | 512 |
 
 ## Rust language basics
 | Component    | Size (B) |
@@ -62,6 +64,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | ArrayInit  | 512 |
 | CmdLineArgs| 9216 |
 | ReadFile   | 13312 |
+| ZipFile    | 935936 |
 
 ## C# NativeAOT language basics
 | Component    | Size (B) |
@@ -75,6 +78,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | ArrayInit  | 3584 |
 | CmdLineArgs| 512 |
 | ReadFile   | 122880 |
+| ZipFile    | 1012224 |
 
 ## Go language basics
 | Component    | Size (B) |
@@ -88,3 +92,4 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | ArrayInit  | 512 |
 | CmdLineArgs| 0 |
 | ReadFile   | 129024 |
+| ZipFile    | 339968 |
