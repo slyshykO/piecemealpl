@@ -46,59 +46,63 @@
 ## C language basics
 | Component    | Size (B) |
 | ------------ | -----: |
-| Runtime    | 10752 |
-| SumStrings | 1024 |
+| Runtime    | 10,752 |
+| SumStrings | 1,024 |
 | ParseFloat | 0 |
 | StrReverse | 0 |
-| ToLower    | 1024 |
+| ToLower    | 1,024 |
 | StrEmpty   | 512 |
 | ArrayInit  | 0 |
 | CmdLineArgs| 0 |
 | ReadFile   | 512 |
-| ZipFile    | 190464 |
+| ZipFile    | 190,464 |
 | CreateFile | 0 |
+| Win32Window| 12,288 |
 
 ## Rust language basics
 | Component    | Size (B) |
 | ------------ | -----: |
-| Runtime    | 138240 |
+| Runtime    | 138,240 |
 | SumStrings | 512 |
-| ParseFloat | 17408 |
-| StrReverse | 1024 |
-| ToLower    | 17408 |
+| ParseFloat | 17,408 |
+| StrReverse | 1,024 |
+| ToLower    | 17,408 |
 | StrEmpty   | 0 |
 | ArrayInit  | 512 |
-| CmdLineArgs| 9216 |
-| ReadFile   | 13312 |
-| ZipFile    | 927744 |
-| CreateFile | 8192 |
+| CmdLineArgs| 9,216 |
+| ReadFile   | 13,312 |
+| ZipFile    | 927,744 |
+| CreateFile | 8,192 |
+| Win32Window| 134,656 |
 
 ## C# NativeAOT language basics
 | Component    | Size (B) |
 | ------------ | -----: |
-| Runtime    | 1105408 |
+| Runtime    | 1,105,408 |
 | SumStrings | 512 |
-| ParseFloat | 26112 |
-| StrReverse | 14336 |
-| ToLower    | 2560 |
+| ParseFloat | 26,112 |
+| StrReverse | 14,336 |
+| ToLower    | 2,560 |
 | StrEmpty   | 0 |
-| ArrayInit  | 3584 |
+| ArrayInit  | 3,584 |
 | CmdLineArgs| 512 |
-| ReadFile   | 122880 |
-| ZipFile    | 907264 |
-| CreateFile | 104960 |
+| ReadFile   | 122,880 |
+| ZipFile    | 907,264 |
+| CreateFile | 104,960 |
+| Win32Window| 1,157,632 |
 
 ## Go language basics
 | Component    | Size (B) |
 | ------------ | -----: |
-| Runtime    | 1270272 |
-| SumStrings | 13312 |
-| ParseFloat | 18432 |
-| StrReverse | 2560 |
-| ToLower    | 13312 |
+| Runtime    | 1,270,272 |
+| SumStrings | 13,312 |
+| ParseFloat | 18,432 |
+| StrReverse | 2,560 |
+| ToLower    | 13,312 |
 | StrEmpty   | -512 |
 | ArrayInit  | 512 |
 | CmdLineArgs| 0 |
-| ReadFile   | 107520 |
-| ZipFile    | 331776 |
-| CreateFile | 8192 |
+| ReadFile   | 107,520 |
+| ZipFile    | 331,776 |
+| CreateFile | 8,192 |
+| Win32Window| 1,304,064 |

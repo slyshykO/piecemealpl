@@ -18,6 +18,7 @@ function Build-Folder($folder)
 	cd ../naot
 	dotnet publish
 	cd ../go
+	go mod tidy
 	go build -o out/ -ldflags "-s -w"
 	cd ..
 	popd
@@ -36,7 +37,9 @@ if (-not $env:VCPKG_ROOT) {
 }
 
 $experiments = @("baseline", "sum_strings", "parse_float", "strreverse", "tolower", "strempty", "arrayinit", "cmdlineargs",
-	"readfile", "archivefile", "createfile")
+	"readfile", "archivefile", "createfile", 
+	#"sdl2", # Go and Rust version does not compiled
+	"win32_window")
 if ($Experiment) {
 		$experiments = @($Experiment)
 }

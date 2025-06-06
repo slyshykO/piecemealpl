@@ -49,6 +49,8 @@ module App =
     let ZipFile = 9
     [<Literal>]
     let CreateFile = 10
+    [<Literal>]
+    let Win32Window = 11
 
 
 module Components =
@@ -74,8 +76,10 @@ module Components =
     let ZipFile = 9
     [<Literal>]
     let CreateFile = 10
+    [<Literal>]
+    let Win32Window = 11
 
-let m = Matrix<float>.Build.Dense(11 (*apps*), 11 (*components*))
+let m = Matrix<float>.Build.Dense(12 (*apps*), 12 (*components*))
 m[App.Baseline, Components.Runtime] <- 1.0
 m[App.SumStrings,Components.Runtime] <- 1.0
 m[App.SumStrings,Components.SumStrings] <- 1.0
@@ -98,6 +102,8 @@ m[App.ZipFile,Components.CreateFile] <- 1.0
 m[App.ZipFile,Components.ZipFile] <- 1.0
 m[App.CreateFile,Components.Runtime] <- 1.0
 m[App.CreateFile,Components.CreateFile] <- 1.0
+m[App.CreateFile,Components.Runtime] <- 1.0
+m[App.Win32Window,Components.Win32Window] <- 1.0
 
 // C values
 let cParams = vector [
@@ -112,6 +118,7 @@ let cParams = vector [
     11264.; // ReadFile
     201216.; // ZipFile
     10752.; // CreateFile
+    12288.; // Win32Window
 ]
 
 // Rust values
@@ -127,6 +134,7 @@ let rustParams = vector [
     151552.; // ReadFile
     1074176.; // ZipFile
     146432.; // CreateFile
+    134656.; // Win32Window
 ]
 
 // Naot values
@@ -142,6 +150,7 @@ let naotParams = vector [
     1228288.; // ReadFile
     2117632.; // ZipFile
     1210368.; // CreateFile
+    1157632.; // Win32Window
 ]
 
 // Go values
@@ -157,6 +166,7 @@ let goParams = vector [
     1377792.; // ReadFile
     1610240.; // ZipFile
     1278464.; // CreateFile
+    1304064.; // Win32Window
 ]
 
 Vector<float>.Build.Dense(6 (*components*))
@@ -170,17 +180,18 @@ let printComponents header (cComponents: Vector<float>) =
     printfn "## %s" header
     printfn "| Component    | Size (B) |"
     printfn "| ------------ | -----: |"
-    printfn "| Runtime    | %.0f |" cComponents[Components.Runtime]
-    printfn "| SumStrings | %.0f |" cComponents[Components.SumStrings]
-    printfn "| ParseFloat | %.0f |" cComponents[Components.ParseFloat]
-    printfn "| StrReverse | %.0f |" cComponents[Components.StrReverse]
-    printfn "| ToLower    | %.0f |" cComponents[Components.ToLower]
-    printfn "| StrEmpty   | %.0f |" cComponents[Components.StrEmpty]
-    printfn "| ArrayInit  | %.0f |" cComponents[Components.ArrayInit]
-    printfn "| CmdLineArgs| %.0f |" cComponents[Components.CmdLineArgs]
-    printfn "| ReadFile   | %.0f |" cComponents[Components.ReadFile]
-    printfn "| ZipFile    | %.0f |" cComponents[Components.ZipFile]
-    printfn "| CreateFile | %.0f |" cComponents[Components.CreateFile]
+    printfn "| Runtime    | %s |" (cComponents[Components.Runtime].ToString("N0"))
+    printfn "| SumStrings | %s |" (cComponents[Components.SumStrings].ToString("N0"))
+    printfn "| ParseFloat | %s |" (cComponents[Components.ParseFloat].ToString("N0"))
+    printfn "| StrReverse | %s |" (cComponents[Components.StrReverse].ToString("N0"))
+    printfn "| ToLower    | %s |" (cComponents[Components.ToLower].ToString("N0"))
+    printfn "| StrEmpty   | %s |" (cComponents[Components.StrEmpty].ToString("N0"))
+    printfn "| ArrayInit  | %s |" (cComponents[Components.ArrayInit].ToString("N0"))
+    printfn "| CmdLineArgs| %s |" (cComponents[Components.CmdLineArgs].ToString("N0"))
+    printfn "| ReadFile   | %s |" (cComponents[Components.ReadFile].ToString("N0"))
+    printfn "| ZipFile    | %s |" (cComponents[Components.ZipFile].ToString("N0"))
+    printfn "| CreateFile | %s |" (cComponents[Components.CreateFile].ToString("N0"))
+    printfn "| Win32Window| %s |" (cComponents[Components.Win32Window].ToString("N0"))
 
 printComponents "C language basics" cComponents
 printComponents "Rust language basics" rustComponents

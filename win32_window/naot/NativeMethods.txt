@@ -1,0 +1,12 @@
+RegisterClass
+CreateWindowEx
+ShowWindow
+GetMessage
+TranslateMessage
+DispatchMessage
+PostQuitMessage
+DefWindowProc
+CW_USEDEFAULT
+WM_DESTROY
+UpdateWindow
+GetModuleHandle
