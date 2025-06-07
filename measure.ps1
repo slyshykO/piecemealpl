@@ -85,7 +85,8 @@ if (-not $env:VCPKG_ROOT) {
 $experiments = @("baseline", "sum_strings", "parse_float", "strreverse", "tolower", "strempty", "arrayinit", "cmdlineargs",
 	"readfile", "archivefile", "createfile", 
 	#"sdl2", # Go and Rust version does not compiled
-	"win32_window", "win32_button")
+	"win32_window", "win32_button", "printline", 
+	"proxycall_baseline", "proxycall")
 if ($Experiment) {
 		$experiments = @($Experiment)
 }

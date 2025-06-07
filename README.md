@@ -37,6 +37,10 @@ If you agree to help with this very mundane process, please submit PR.
 - [Win32Window](./win32_window) Create empty Win32 window.
 - [Win32Button](./win32_button) Create Win32 window with one button.
 
+# Abstractions cost
+- [ProxyCallBaseline](./proxycall_baseline) 10 functions with single argument. Each of them called.
+- [ProxyCall](./proxycall) 10 wrapper functions which pass single constant argument to 10 underlying functions defnied same was as in the ProxyCallBaseline. Estimate usage of the abstraction.
+
 # Results
 
 The 0 or negative numbers mean that I cannot reliably measure or guess that size. 
@@ -60,6 +64,8 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | CreateFile | 0 |
 | Win32Window| 1,536 |
 | Win32Button| 0 |
+| ProxyCallBaseline| 512 |
+| ProxyCall  | 0 |
 
 ## Rust language basics
 | Component    | Size (B) |
@@ -78,6 +84,8 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | CreateFile | 8,192 |
 | Win32Window| -3,584 |
 | Win32Button| 13,312 |
+| ProxyCallBaseline| 13,824 |
+| ProxyCall  | 0 |
 
 ## C# NativeAOT language basics
 | Component    | Size (B) |
@@ -96,6 +104,8 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | CreateFile | 104,960 |
 | Win32Window| 52,224 |
 | Win32Button| 61,952 |
+| ProxyCallBaseline| 62,464 |
+| ProxyCall  | -62,464 |
 
 ## Go language basics
 | Component    | Size (B) |
@@ -114,3 +124,5 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | CreateFile | 8,192 |
 | Win32Window| 33,792 |
 | Win32Button| 407,552 |
+| ProxyCallBaseline| 410,624 |
+| ProxyCall  | 1,024 |

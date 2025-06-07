@@ -55,6 +55,10 @@ module App =
     let Win32Button = 12
     [<Literal>]
     let PrintLine = 13
+    [<Literal>]
+    let ProxyCallBaseline = 14
+    [<Literal>]
+    let ProxyCall = 15
 
 module Components =
     [<Literal>] 
@@ -85,8 +89,12 @@ module Components =
     let Win32Button = 12
     [<Literal>]
     let PrintLine = 13
+    [<Literal>]
+    let ProxyCallBaseline = 14
+    [<Literal>]
+    let ProxyCall = 15
 
-let m = Matrix<float>.Build.Dense(14 (*apps*), 14 (*components*))
+let m = Matrix<float>.Build.Dense(16 (*apps*), 16 (*components*))
 m[App.Baseline, Components.Runtime] <- 1.0
 
 m[App.SumStrings,Components.Runtime] <- 1.0
@@ -142,6 +150,13 @@ m[App.Win32Button,Components.Win32Button] <- 1.0
 m[App.PrintLine,Components.Runtime] <- 1.0
 m[App.PrintLine,Components.PrintLine] <- 1.0
 
+m[App.ProxyCallBaseline,Components.Runtime] <- 1.0
+m[App.ProxyCallBaseline,Components.ProxyCallBaseline] <- 1.0
+
+m[App.ProxyCall,Components.Runtime] <- 1.0
+m[App.ProxyCall,Components.ProxyCallBaseline] <- 1.0
+m[App.ProxyCall,Components.ProxyCall] <- 1.0
+
 // C values
 let cParams = vector [
     10752.; // Baseline
@@ -158,6 +173,8 @@ let cParams = vector [
     12288.; // Win32Window
     12288.; // Win32Button
     10752.; // PrintLine
+    11264.; // ProxyCallBaseline
+    11264.; // ProxyCall
 ]
 
 // Rust values
@@ -176,6 +193,8 @@ let rustParams = vector [
     134656.; // Win32Window
     135168.; // Win32Button
     138240.; // PrintLine
+    139264.; // ProxyCallBaseline
+    139264.; // ProxyCall
 ]
 
 // Naot values
@@ -194,6 +213,8 @@ let naotParams = vector [
     1157632.; // Win32Window
     1158656.; // Win32Button
     1105408.; // PrintLine
+    1106944.; // ProxyCallBaseline
+    1044480.; // ProxyCall
 ]
 
 // Go values
@@ -212,6 +233,8 @@ let goParams = vector [
     1304064.; // Win32Window
     1305088.; // Win32Button
     1270272.; // PrintLine
+    1274368.; // ProxyCallBaseline
+    1275392.; // ProxyCall
 ]
 
 Vector<float>.Build.Dense(6 (*components*))
@@ -239,6 +262,8 @@ let printComponents header (cComponents: Vector<float>) =
     printfn "| CreateFile | %s |" (cComponents[Components.CreateFile].ToString("N0"))
     printfn "| Win32Window| %s |" (cComponents[Components.Win32Window].ToString("N0"))
     printfn "| Win32Button| %s |" (cComponents[Components.Win32Button].ToString("N0"))
+    printfn "| ProxyCallBaseline| %s |" (cComponents[Components.ProxyCallBaseline].ToString("N0"))
+    printfn "| ProxyCall  | %s |" (cComponents[Components.ProxyCall].ToString("N0"))
 
 printComponents "C language basics" cComponents
 printComponents "Rust language basics" rustComponents

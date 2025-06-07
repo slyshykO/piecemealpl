@@ -64,6 +64,8 @@
 | CreateFile | 0 |
 | Win32Window| 1,536 |
 | Win32Button| 0 |
+| ProxyCallBaseline| 512 |
+| ProxyCall  | 0 |
 
 ## Rust language basics
 | Component    | Size (B) |
@@ -82,6 +84,8 @@
 | CreateFile | 8,192 |
 | Win32Window| -3,584 |
 | Win32Button| 13,312 |
+| ProxyCallBaseline| 13,824 |
+| ProxyCall  | 0 |
 
 ## C# NativeAOT language basics
 | Component    | Size (B) |
@@ -100,6 +104,8 @@
 | CreateFile | 104,960 |
 | Win32Window| 52,224 |
 | Win32Button| 61,952 |
+| ProxyCallBaseline| 62,464 |
+| ProxyCall  | -62,464 |
 
 ## Go language basics
 | Component    | Size (B) |
@@ -118,3 +124,5 @@
 | CreateFile | 8,192 |
 | Win32Window| 33,792 |
 | Win32Button| 407,552 |
+| ProxyCallBaseline| 410,624 |
+| ProxyCall  | 1,024 |
