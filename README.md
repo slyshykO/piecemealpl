@@ -55,7 +55,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | SumStrings | 1,024 |
 | ParseFloat | 0 |
 | StrReverse | 0 |
-| ToLower    | 1,024 |
+| ToLower    | 512 |
 | StrEmpty   | 512 |
 | ArrayInit  | 0 |
 | CmdLineArgs| 0 |

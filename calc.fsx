@@ -165,7 +165,7 @@ let cParams = vector [
     11776.; // SumStrings
     10752.; // ParseFloat
     10752.; // StrReverse
-    11776.; // ToLower
+    11264.; // ToLower
     11264.; // StrEmpty
     10752.; // ArrayInit
     10752.; // CmdLineArgs
