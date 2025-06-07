@@ -151,9 +151,11 @@ m[App.PrintLine,Components.Runtime] <- 1.0
 m[App.PrintLine,Components.PrintLine] <- 1.0
 
 m[App.ProxyCallBaseline,Components.Runtime] <- 1.0
+m[App.ProxyCallBaseline,Components.PrintLine] <- 1.0
 m[App.ProxyCallBaseline,Components.ProxyCallBaseline] <- 1.0
 
 m[App.ProxyCall,Components.Runtime] <- 1.0
+m[App.ProxyCall,Components.PrintLine] <- 1.0
 m[App.ProxyCall,Components.ProxyCallBaseline] <- 1.0
 m[App.ProxyCall,Components.ProxyCall] <- 1.0
 

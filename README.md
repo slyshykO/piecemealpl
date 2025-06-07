@@ -84,7 +84,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | CreateFile | 8,192 |
 | Win32Window| 9,216 |
 | Win32Button| 512 |
-| ProxyCallBaseline| 13,824 |
+| ProxyCallBaseline| 1,024 |
 | ProxyCall  | 0 |
 
 ## C# NativeAOT language basics
@@ -104,7 +104,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | CreateFile | 104,960 |
 | Win32Window| 113,152 |
 | Win32Button| 1,024 |
-| ProxyCallBaseline| 62,464 |
+| ProxyCallBaseline| 1,536 |
 | ProxyCall  | -62,464 |
 
 ## Go language basics
@@ -124,5 +124,5 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | CreateFile | 8,192 |
 | Win32Window| 440,320 |
 | Win32Button| 1,024 |
-| ProxyCallBaseline| 410,624 |
+| ProxyCallBaseline| 4,096 |
 | ProxyCall  | 1,024 |
