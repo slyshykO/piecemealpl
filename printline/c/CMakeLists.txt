@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(baseline C)
+project(printline C)
 
 file(GLOB sources      main.c)
 
@@ -8,7 +8,7 @@ add_link_options("$<$<NOT:$<CONFIG:Debug>>:/DEBUG>")
 add_link_options("$<$<NOT:$<CONFIG:Debug>>:/OPT:REF>")
 add_link_options("$<$<NOT:$<CONFIG:Debug>>:/OPT:ICF>")
 
-add_executable(baseline ${sources})
+add_executable(printline ${sources})
 
 # just for example add some compiler flags
-target_compile_options(baseline PUBLIC /std:c17)
+target_compile_options(printline PUBLIC /std:c17)
