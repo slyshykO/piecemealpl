@@ -6,10 +6,10 @@ import (
 )
 
 func main() {
-	f,err := os.Create("output.txt")
-	if err != nil{
-        panic(f)
-    }
+	f, err := os.Create("output.txt")
+	if err != nil {
+		panic(f)
+	}
 	defer f.Close()
 	fmt.Println("Hello, World!")
 }

@@ -1,9 +1,6 @@
 use windows::{
-    core::*, 
-    Win32::Foundation::*,
-    Win32::Graphics::Gdi::*,
-    Win32::System::LibraryLoader::GetModuleHandleA, 
-    Win32::UI::WindowsAndMessaging::*,
+    core::*, Win32::Foundation::*, Win32::Graphics::Gdi::*,
+    Win32::System::LibraryLoader::GetModuleHandleA, Win32::UI::WindowsAndMessaging::*,
 };
 
 fn main() -> Result<()> {

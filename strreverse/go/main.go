@@ -1,6 +1,8 @@
 package main
 
-import ("fmt")
+import (
+	"fmt"
+)
 
 func reverseString(s string) string {
 	runes := []rune(s)

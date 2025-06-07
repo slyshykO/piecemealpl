@@ -1,7 +1,9 @@
 param(
 	$Experiment,
 	[switch]
-	$Clean
+	$Clean,
+	[switch]
+	$Format
 )
 function Build-Folder($folder)
 {
@@ -54,6 +56,20 @@ function Clean-Folder($folder)
 	popd
 }
 
+function Format-Folder($folder)
+{
+	echo "===== Cleaning $folder ====="
+	pushd $folder
+	cd rust
+	cargo fmt
+	cd ../c
+	cd ../naot
+	cd ../go
+	go fmt main.go
+	cd ..
+	popd
+}
+
 function Measure-Folder($folder)
 {
 	ls $folder/c/build/Release/*.exe | Select-Object Name, Length
@@ -78,6 +94,12 @@ if ($Clean)
 {
 	foreach ($experiment in $experiments) {
 		Clean-Folder $experiment
+	}
+}
+elseif ($Format)
+{
+	foreach ($experiment in $experiments) {
+		Format-Folder $experiment
 	}
 }
 else

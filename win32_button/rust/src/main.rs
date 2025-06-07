@@ -1,9 +1,6 @@
 use windows::{
-    core::*, 
-    Win32::Foundation::*,
-    Win32::Graphics::Gdi::*,
-    Win32::System::LibraryLoader::GetModuleHandleA, 
-    Win32::UI::WindowsAndMessaging::*,
+    core::*, Win32::Foundation::*, Win32::Graphics::Gdi::*,
+    Win32::System::LibraryLoader::GetModuleHandleA, Win32::UI::WindowsAndMessaging::*,
 };
 
 fn main() -> Result<()> {
@@ -62,8 +59,20 @@ extern "system" fn wndproc(window: HWND, message: u32, wparam: WPARAM, lparam: L
             //    LRESULT(0)
             //}
             WM_CREATE => {
-                let _ = CreateWindowExA(WS_EX_LEFT, s!("BUTTON"), s!("Click Me"), WS_TABSTOP | WS_VISIBLE | WS_CHILD | WINDOW_STYLE(BS_DEFPUSHBUTTON as u32),
-                    50, 50, 100, 30, Some(window), None, None, None);
+                let _ = CreateWindowExA(
+                    WS_EX_LEFT,
+                    s!("BUTTON"),
+                    s!("Click Me"),
+                    WS_TABSTOP | WS_VISIBLE | WS_CHILD | WINDOW_STYLE(BS_DEFPUSHBUTTON as u32),
+                    50,
+                    50,
+                    100,
+                    30,
+                    Some(window),
+                    None,
+                    None,
+                    None,
+                );
                 LRESULT(0)
             }
             WM_DESTROY => {

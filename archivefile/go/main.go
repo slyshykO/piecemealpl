@@ -1,22 +1,22 @@
 package main
 
 import (
-	"fmt"
-	"os"
-	"io"
 	"archive/zip"
+	"fmt"
+	"io"
+	"os"
 )
 
 func main() {
-	archive,err := os.Create("experiment.zip")
-	if err != nil{
-        panic(err)
-    }
+	archive, err := os.Create("experiment.zip")
+	if err != nil {
+		panic(err)
+	}
 	defer archive.Close()
 
 	zipWriter := zip.NewWriter(archive)
-	w1,err := zipWriter.Create ("hello.txt")
-	if err!=nil {
+	w1, err := zipWriter.Create("hello.txt")
+	if err != nil {
 		panic(err)
 	}
 

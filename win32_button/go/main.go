@@ -24,8 +24,8 @@ func main() {
 
 	// Create the window.
 	hwnd, _ := win32.CreateWindowEx(
-		0,          // Optional window styles.
-		CLASS_NAME, // Window class
+		0,                                 // Optional window styles.
+		CLASS_NAME,                        // Window class
 		win32.StrToPwstr("Hello, world!"), // Window text
 		win32.WS_OVERLAPPEDWINDOW,         // Window style
 
@@ -59,26 +59,26 @@ func main() {
 func WindowProc(hwnd win32.HWND, uMsg win32.UINT, wParam win32.WPARAM, lParam win32.LPARAM) win32.LRESULT {
 	switch uMsg {
 	case win32.WM_CREATE:
-		win32.CreateWindowEx(0, win32.StrToPwstr("BUTTON"), win32.StrToPwstr("Click Me"), 
-			win32.WS_TABSTOP | win32.WS_VISIBLE | win32.WS_CHILD |  win32.WINDOW_STYLE(win32.BS_DEFPUSHBUTTON),
-                    50, 50, 100, 30, hwnd, win32.NULL, hInstance, nil);
-	
+		win32.CreateWindowEx(0, win32.StrToPwstr("BUTTON"), win32.StrToPwstr("Click Me"),
+			win32.WS_TABSTOP|win32.WS_VISIBLE|win32.WS_CHILD|win32.WINDOW_STYLE(win32.BS_DEFPUSHBUTTON),
+			50, 50, 100, 30, hwnd, win32.NULL, hInstance, nil)
+
 		return 0
 	case win32.WM_DESTROY:
 		win32.PostQuitMessage(0)
 		return 0
-	// case win32.WM_PAINT:
-	// 	var ps win32.PAINTSTRUCT
-	// 	hdc := win32.BeginPaint(hwnd, &ps)
-	// 
-	// 	// All painting occurs here, between BeginPaint and EndPaint.
-	// 	win32.FillRect(hdc, &ps.RcPaint, win32.HBRUSH(win32.COLOR_WINDOW+1))
-	// 
-	// 	wszText, _ := syscall.UTF16FromString("Hello world!")
-	// 	win32.TextOut(hdc, 10, 10, &wszText[0], int32(len(wszText)-1))
-	// 
-	// 	win32.EndPaint(hwnd, &ps)
-	// 	return 0
+		// case win32.WM_PAINT:
+		// 	var ps win32.PAINTSTRUCT
+		// 	hdc := win32.BeginPaint(hwnd, &ps)
+		//
+		// 	// All painting occurs here, between BeginPaint and EndPaint.
+		// 	win32.FillRect(hdc, &ps.RcPaint, win32.HBRUSH(win32.COLOR_WINDOW+1))
+		//
+		// 	wszText, _ := syscall.UTF16FromString("Hello world!")
+		// 	win32.TextOut(hdc, 10, 10, &wszText[0], int32(len(wszText)-1))
+		//
+		// 	win32.EndPaint(hwnd, &ps)
+		// 	return 0
 	}
 	return win32.DefWindowProc(hwnd, uMsg, wParam, lParam)
 }
