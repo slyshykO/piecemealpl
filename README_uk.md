@@ -26,6 +26,7 @@
 
 # Компоненти
 
+- [PrintLine](./printline) Надрукувати рядок у консоль.
 - [SumStrings](./sum_strings) Виконати конкатенацію двох рядків у мові
 - [ParseFloat](./parse_float) Розібрати рядок із числом з плаваючою комою у тип float32.
 - [StrReverse](./strreverse) Перевернути константний рядок
@@ -36,6 +37,8 @@
 - [ReadFile](./readfile) Прочитати весь файл в консоль
 - [ZipFile](./archivefile) Архівує рядок у один файл запакований в ZIP файл.
 - [CreateFile](./createfile) Створює пустий файл із заданою назвою.
+- [Win32Window](./win32_window) Створити пусте Win32 вікно.
+- [Win32Button](./win32_button) Створити Win32 вікно із однією кнопкою.
 
 # Результати
 
@@ -43,10 +46,12 @@
 Очевидно, ця функціональність має ненульовий розмір.
 Ймовірно, я переоцінив розмір рантайму, мінімальної функції main, і коду, який вже був виділений для цього.
 
+
 ## C language basics
 | Component    | Size (B) |
 | ------------ | -----: |
 | Runtime    | 10,752 |
+| PrintLine  | 0 |
 | SumStrings | 1,024 |
 | ParseFloat | 0 |
 | StrReverse | 0 |
@@ -57,12 +62,14 @@
 | ReadFile   | 512 |
 | ZipFile    | 190,464 |
 | CreateFile | 0 |
-| Win32Window| 12,288 |
+| Win32Window| 1,536 |
+| Win32Button| 0 |
 
 ## Rust language basics
 | Component    | Size (B) |
 | ------------ | -----: |
-| Runtime    | 138,240 |
+| Runtime    | 125,440 |
+| PrintLine  | 12,800 |
 | SumStrings | 512 |
 | ParseFloat | 17,408 |
 | StrReverse | 1,024 |
@@ -73,12 +80,14 @@
 | ReadFile   | 13,312 |
 | ZipFile    | 927,744 |
 | CreateFile | 8,192 |
-| Win32Window| 134,656 |
+| Win32Window| -3,584 |
+| Win32Button| 13,312 |
 
 ## C# NativeAOT language basics
 | Component    | Size (B) |
 | ------------ | -----: |
-| Runtime    | 1,105,408 |
+| Runtime    | 1,044,480 |
+| PrintLine  | 60,928 |
 | SumStrings | 512 |
 | ParseFloat | 26,112 |
 | StrReverse | 14,336 |
@@ -89,12 +98,14 @@
 | ReadFile   | 122,880 |
 | ZipFile    | 907,264 |
 | CreateFile | 104,960 |
-| Win32Window| 1,157,632 |
+| Win32Window| 52,224 |
+| Win32Button| 60,928 |
 
 ## Go language basics
 | Component    | Size (B) |
 | ------------ | -----: |
-| Runtime    | 1,270,272 |
+| Runtime    | 863,744 |
+| PrintLine  | 406,528 |
 | SumStrings | 13,312 |
 | ParseFloat | 18,432 |
 | StrReverse | 2,560 |
@@ -105,4 +116,5 @@
 | ReadFile   | 107,520 |
 | ZipFile    | 331,776 |
 | CreateFile | 8,192 |
-| Win32Window| 1,304,064 |
+| Win32Window| 33,792 |
+| Win32Button| 407,552 |

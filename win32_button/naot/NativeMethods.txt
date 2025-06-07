@@ -1,0 +1,15 @@
+RegisterClass
+CreateWindowEx
+ShowWindow
+GetMessage
+TranslateMessage
+DispatchMessage
+PostQuitMessage
+DefWindowProc
+CW_USEDEFAULT
+WM_DESTROY
+WM_CREATE
+BS_DEFPUSHBUTTON
+BUTTON_STYLE
+UpdateWindow
+GetModuleHandle

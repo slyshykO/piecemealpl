@@ -23,6 +23,7 @@ If you agree to help with this very mundane process, please submit PR.
 
 # Components
 
+- [PrintLine](./printline) Print line to the console.
 - [SumStrings](./sum_strings) The perform concatenation of two string types in the language.
 - [ParseFloat](./parse_float) Parse string with float value into float32 datatype.
 - [StrReverse](./strreverse) Reverse constant string
@@ -33,16 +34,20 @@ If you agree to help with this very mundane process, please submit PR.
 - [ReadFile](./readfile) Read file to the console
 - [ZipFile](./archivefile) Archive string into single file packaged into ZIP file.
 - [CreateFile](./createfile) Create empty file with the given name.
+- [Win32Window](./win32_window) Create empty Win32 window.
+- [Win32Button](./win32_button) Create Win32 window with one button.
 
 # Results
 
 The 0 or negative numbers mean that I cannot reliably measure or guess that size. 
 Obviosuly that feature have non zero size. Probably I overcalculate size of the runtime + minimal main functoin, and code which needed for that already alllocated.
 
+
 ## C language basics
 | Component    | Size (B) |
 | ------------ | -----: |
 | Runtime    | 10,752 |
+| PrintLine  | 0 |
 | SumStrings | 1,024 |
 | ParseFloat | 0 |
 | StrReverse | 0 |
@@ -53,12 +58,14 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | ReadFile   | 512 |
 | ZipFile    | 190,464 |
 | CreateFile | 0 |
-| Win32Window| 12,288 |
+| Win32Window| 1,536 |
+| Win32Button| 0 |
 
 ## Rust language basics
 | Component    | Size (B) |
 | ------------ | -----: |
-| Runtime    | 138,240 |
+| Runtime    | 125,440 |
+| PrintLine  | 12,800 |
 | SumStrings | 512 |
 | ParseFloat | 17,408 |
 | StrReverse | 1,024 |
@@ -69,12 +76,14 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | ReadFile   | 13,312 |
 | ZipFile    | 927,744 |
 | CreateFile | 8,192 |
-| Win32Window| 134,656 |
+| Win32Window| -3,584 |
+| Win32Button| 13,312 |
 
 ## C# NativeAOT language basics
 | Component    | Size (B) |
 | ------------ | -----: |
-| Runtime    | 1,105,408 |
+| Runtime    | 1,044,480 |
+| PrintLine  | 60,928 |
 | SumStrings | 512 |
 | ParseFloat | 26,112 |
 | StrReverse | 14,336 |
@@ -85,12 +94,14 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | ReadFile   | 122,880 |
 | ZipFile    | 907,264 |
 | CreateFile | 104,960 |
-| Win32Window| 1,157,632 |
+| Win32Window| 52,224 |
+| Win32Button| 60,928 |
 
 ## Go language basics
 | Component    | Size (B) |
 | ------------ | -----: |
-| Runtime    | 1,270,272 |
+| Runtime    | 863,744 |
+| PrintLine  | 406,528 |
 | SumStrings | 13,312 |
 | ParseFloat | 18,432 |
 | StrReverse | 2,560 |
@@ -101,4 +112,5 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | ReadFile   | 107,520 |
 | ZipFile    | 331,776 |
 | CreateFile | 8,192 |
-| Win32Window| 1,304,064 |
+| Win32Window| 33,792 |
+| Win32Button| 407,552 |

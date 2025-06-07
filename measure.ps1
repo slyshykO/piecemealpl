@@ -1,5 +1,7 @@
 param(
-	$Experiment
+	$Experiment,
+	[switch]
+	$Clean
 )
 function Build-Folder($folder)
 {
@@ -24,6 +26,34 @@ function Build-Folder($folder)
 	popd
 }
 
+function Clean-Folder($folder)
+{
+	echo "===== Cleaning $folder ====="
+	pushd $folder
+	cd rust
+	cargo clean
+	cd ../c
+	if (Test-Path "build") {
+		rm -r build -force
+	}
+	cd ../naot
+	if (Test-Path "bin") {
+		rm -r bin
+	}
+	if (Test-Path "obj") {
+		rm -r obj
+	}
+	if (Test-Path ".vs") {
+		rm -r .vs -force
+	}
+	cd ../go
+	if (Test-Path "out") {
+		rm -r out
+	}
+	cd ..
+	popd
+}
+
 function Measure-Folder($folder)
 {
 	ls $folder/c/build/Release/*.exe | Select-Object Name, Length
@@ -39,16 +69,24 @@ if (-not $env:VCPKG_ROOT) {
 $experiments = @("baseline", "sum_strings", "parse_float", "strreverse", "tolower", "strempty", "arrayinit", "cmdlineargs",
 	"readfile", "archivefile", "createfile", 
 	#"sdl2", # Go and Rust version does not compiled
-	"win32_window")
+	"win32_window", "win32_button")
 if ($Experiment) {
 		$experiments = @($Experiment)
 }
 #$experiments = @("createfile")
-foreach ($experiment in $experiments) {
-	Build-Folder $experiment
+if ($Clean)
+{
+	foreach ($experiment in $experiments) {
+		Clean-Folder $experiment
+	}
 }
+else
+{
+	foreach ($experiment in $experiments) {
+		Build-Folder $experiment
+	}
 
-foreach ($experiment in $experiments) {
-	Measure-Folder $experiment
+	foreach ($experiment in $experiments) {
+		Measure-Folder $experiment
+	}
 }
-

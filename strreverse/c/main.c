@@ -4,6 +4,6 @@
 
 int main() {
 	char* t = strrev("Hello, world!");
-    printf(t);
+    printfn(t);
     return 0;
 }
