@@ -59,6 +59,8 @@ module App =
     let ProxyCallBaseline = 14
     [<Literal>]
     let ProxyCall = 15
+    [<Literal>]
+    let CmdLineArgs2 = 16
 
 module Components =
     [<Literal>] 
@@ -93,8 +95,10 @@ module Components =
     let ProxyCallBaseline = 14
     [<Literal>]
     let ProxyCall = 15
+    [<Literal>]
+    let CmdLineArgs2 = 16
 
-let m = Matrix<float>.Build.Dense(16 (*apps*), 16 (*components*))
+let m = Matrix<float>.Build.Dense(17 (*apps*), 17 (*components*))
 m[App.Baseline, Components.Runtime] <- 1.0
 
 m[App.SumStrings,Components.Runtime] <- 1.0
@@ -159,6 +163,11 @@ m[App.ProxyCall,Components.PrintLine] <- 1.0
 m[App.ProxyCall,Components.ProxyCallBaseline] <- 1.0
 m[App.ProxyCall,Components.ProxyCall] <- 1.0
 
+m[App.CmdLineArgs2,Components.Runtime] <- 1.0
+m[App.CmdLineArgs2,Components.PrintLine] <- 1.0
+m[App.CmdLineArgs2,Components.CmdLineArgs] <- 1.0
+m[App.CmdLineArgs2,Components.CmdLineArgs2] <- 1.0
+
 // C values
 let cParams = vector [
     10752.; // Baseline
@@ -177,6 +186,7 @@ let cParams = vector [
     10752.; // PrintLine
     11264.; // ProxyCallBaseline
     11264.; // ProxyCall
+    15360.; // CmdLineArgs2
 ]
 
 // Rust values
@@ -197,6 +207,7 @@ let rustParams = vector [
     138240.; // PrintLine
     139264.; // ProxyCallBaseline
     139264.; // ProxyCall
+    685568.; // CmdLineArgs2
 ]
 
 // Naot values
@@ -217,6 +228,7 @@ let naotParams = vector [
     1105408.; // PrintLine
     1106944.; // ProxyCallBaseline
     1044480.; // ProxyCall
+    3415040.; // CmdLineArgs2
 ]
 
 // Go values
@@ -237,6 +249,7 @@ let goParams = vector [
     1270272.; // PrintLine
     1274368.; // ProxyCallBaseline
     1275392.; // ProxyCall
+    1372160.; // CmdLineArgs2
 ]
 
 Vector<float>.Build.Dense(6 (*components*))
@@ -259,6 +272,7 @@ let printComponents header (cComponents: Vector<float>) =
     printfn "| StrEmpty   | %s |" (cComponents[Components.StrEmpty].ToString("N0"))
     printfn "| ArrayInit  | %s |" (cComponents[Components.ArrayInit].ToString("N0"))
     printfn "| CmdLineArgs| %s |" (cComponents[Components.CmdLineArgs].ToString("N0"))
+    printfn "| CmdLineArgs2| %s |" (cComponents[Components.CmdLineArgs2].ToString("N0"))
     printfn "| ReadFile   | %s |" (cComponents[Components.ReadFile].ToString("N0"))
     printfn "| ZipFile    | %s |" (cComponents[Components.ZipFile].ToString("N0"))
     printfn "| CreateFile | %s |" (cComponents[Components.CreateFile].ToString("N0"))

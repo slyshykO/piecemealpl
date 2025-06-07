@@ -83,6 +83,7 @@ if (-not $env:VCPKG_ROOT) {
 }
 
 $experiments = @("baseline", "sum_strings", "parse_float", "strreverse", "tolower", "strempty", "arrayinit", "cmdlineargs",
+	"cmdlineargs2",
 	"readfile", "archivefile", "createfile", 
 	#"sdl2", # Go and Rust version does not compiled
 	"win32_window", "win32_button", "printline", 

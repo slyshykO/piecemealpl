@@ -31,6 +31,7 @@ If you agree to help with this very mundane process, please submit PR.
 - [StrEmpty](./strempty) Check that string is empty.
 - [ArrayInit](./arrayinit) Initialize array of 100 bytes and print all 100 of them.
 - [CmdLineArgs](./cmdlineargs) Printing all passed command line args
+- [CmdLineArgs2](./cmdlineargs2) Parse 4 command line arguments and print them.
 - [ReadFile](./readfile) Read file to the console
 - [ZipFile](./archivefile) Archive string into single file packaged into ZIP file.
 - [CreateFile](./createfile) Create empty file with the given name.
@@ -59,6 +60,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | StrEmpty   | 512 |
 | ArrayInit  | 0 |
 | CmdLineArgs| 0 |
+| CmdLineArgs2| 4,608 |
 | ReadFile   | 512 |
 | ZipFile    | 190,464 |
 | CreateFile | 0 |
@@ -79,6 +81,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | StrEmpty   | 0 |
 | ArrayInit  | 512 |
 | CmdLineArgs| 7,168 |
+| CmdLineArgs2| 540,160 |
 | ReadFile   | 13,312 |
 | ZipFile    | 927,744 |
 | CreateFile | 8,192 |
@@ -99,6 +102,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | StrEmpty   | 0 |
 | ArrayInit  | 3,584 |
 | CmdLineArgs| 512 |
+| CmdLineArgs2| 2,309,120 |
 | ReadFile   | 122,880 |
 | ZipFile    | 907,264 |
 | CreateFile | 104,960 |
@@ -119,6 +123,7 @@ Obviosuly that feature have non zero size. Probably I overcalculate size of the 
 | StrEmpty   | -512 |
 | ArrayInit  | 512 |
 | CmdLineArgs| 0 |
+| CmdLineArgs2| 101,888 |
 | ReadFile   | 107,520 |
 | ZipFile    | 331,776 |
 | CreateFile | 8,192 |

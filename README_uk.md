@@ -34,6 +34,7 @@
 - [StrEmpty](./strempty) Перевірити чи рядок пустий.
 - [ArrayInit](./arrayinit) Ініціалізувати масив 100 байт і надрукувати усі 100 значень.
 - [CmdLineArgs](./cmdlineargs) Надрукувати усі передані аргументи командного рядку
+- [CmdLineArgs2](./cmdlineargs2) Розібрати 4 аргументи командного рядка та надрукувати їх.
 - [ReadFile](./readfile) Прочитати весь файл в консоль
 - [ZipFile](./archivefile) Архівує рядок у один файл запакований в ZIP файл.
 - [CreateFile](./createfile) Створює пустий файл із заданою назвою.
@@ -63,6 +64,7 @@
 | StrEmpty   | 512 |
 | ArrayInit  | 0 |
 | CmdLineArgs| 0 |
+| CmdLineArgs2| 4,608 |
 | ReadFile   | 512 |
 | ZipFile    | 190,464 |
 | CreateFile | 0 |
@@ -83,6 +85,7 @@
 | StrEmpty   | 0 |
 | ArrayInit  | 512 |
 | CmdLineArgs| 7,168 |
+| CmdLineArgs2| 540,160 |
 | ReadFile   | 13,312 |
 | ZipFile    | 927,744 |
 | CreateFile | 8,192 |
@@ -103,6 +106,7 @@
 | StrEmpty   | 0 |
 | ArrayInit  | 3,584 |
 | CmdLineArgs| 512 |
+| CmdLineArgs2| 2,309,120 |
 | ReadFile   | 122,880 |
 | ZipFile    | 907,264 |
 | CreateFile | 104,960 |
@@ -123,6 +127,7 @@
 | StrEmpty   | -512 |
 | ArrayInit  | 512 |
 | CmdLineArgs| 0 |
+| CmdLineArgs2| 101,888 |
 | ReadFile   | 107,520 |
 | ZipFile    | 331,776 |
 | CreateFile | 8,192 |
