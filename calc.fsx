@@ -169,7 +169,7 @@ let rustParams = vector [
     155648.; // ToLower
     138240.; // StrEmpty
     138752.; // ArrayInit
-    147456.; // CmdLineArgs
+    145408.; // CmdLineArgs
     151552.; // ReadFile
     1074176.; // ZipFile
     146432.; // CreateFile

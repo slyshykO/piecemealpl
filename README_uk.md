@@ -76,7 +76,7 @@
 | ToLower    | 17,408 |
 | StrEmpty   | 0 |
 | ArrayInit  | 512 |
-| CmdLineArgs| 9,216 |
+| CmdLineArgs| 7,168 |
 | ReadFile   | 13,312 |
 | ZipFile    | 927,744 |
 | CreateFile | 8,192 |
