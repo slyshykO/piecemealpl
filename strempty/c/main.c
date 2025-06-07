@@ -3,8 +3,8 @@
 
 int main() {
     char str[] = "Hello, world!";
-    size_t b = strlen(str);
+    const size_t b = strlen(str);
     if (b)
-        printfn(str);
+        printf("%s", str);
     return 0;
 }

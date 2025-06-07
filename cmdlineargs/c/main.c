@@ -3,8 +3,8 @@
 
 int main(int argc, char* argv[]) {
     for (int i = 0; i < argc; i++) {
-        printfn(argv[i]);
+        printf("%s\n", argv[i]);
     }
-    printfn("Hello, world!");
+    printf("%s","Hello, world!\n");
     return 0;
 }

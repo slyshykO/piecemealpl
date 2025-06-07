@@ -3,7 +3,7 @@
 #include <string.h>
 
 int main() {
-	char* t = strrev("Hello, world!");
-    printfn(t);
+    char* t = strrev("Hello, world!");
+    printf("%s\n", t);
     return 0;
 }
