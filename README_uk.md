@@ -82,8 +82,8 @@
 | ReadFile   | 13,312 |
 | ZipFile    | 927,744 |
 | CreateFile | 8,192 |
-| Win32Window| -3,584 |
-| Win32Button| 13,312 |
+| Win32Window| 9,216 |
+| Win32Button| 512 |
 | ProxyCallBaseline| 13,824 |
 | ProxyCall  | 0 |
 
@@ -102,8 +102,8 @@
 | ReadFile   | 122,880 |
 | ZipFile    | 907,264 |
 | CreateFile | 104,960 |
-| Win32Window| 52,224 |
-| Win32Button| 61,952 |
+| Win32Window| 113,152 |
+| Win32Button| 1,024 |
 | ProxyCallBaseline| 62,464 |
 | ProxyCall  | -62,464 |
 
@@ -122,7 +122,7 @@
 | ReadFile   | 107,520 |
 | ZipFile    | 331,776 |
 | CreateFile | 8,192 |
-| Win32Window| 33,792 |
-| Win32Button| 407,552 |
+| Win32Window| 440,320 |
+| Win32Button| 1,024 |
 | ProxyCallBaseline| 410,624 |
 | ProxyCall  | 1,024 |

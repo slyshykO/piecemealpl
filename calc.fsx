@@ -139,7 +139,7 @@ m[App.CreateFile,Components.PrintLine] <- 1.0
 m[App.CreateFile,Components.CreateFile] <- 1.0
 
 m[App.Win32Window,Components.Runtime] <- 1.0
-m[App.Win32Window,Components.PrintLine] <- 1.0
+//m[App.Win32Window,Components.PrintLine] <- 1.0
 m[App.Win32Window,Components.Win32Window] <- 1.0
 
 m[App.Win32Button,Components.Runtime] <- 1.0
