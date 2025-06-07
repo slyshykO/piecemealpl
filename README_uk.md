@@ -99,14 +99,14 @@
 | ZipFile    | 907,264 |
 | CreateFile | 104,960 |
 | Win32Window| 52,224 |
-| Win32Button| 60,928 |
+| Win32Button| 61,952 |
 
 ## Go language basics
 | Component    | Size (B) |
 | ------------ | -----: |
 | Runtime    | 863,744 |
 | PrintLine  | 406,528 |
-| SumStrings | 13,312 |
+| SumStrings | 0 |
 | ParseFloat | 18,432 |
 | StrReverse | 2,560 |
 | ToLower    | 13,312 |

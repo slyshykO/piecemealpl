@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(win32_window C)
+project(win32_button C)
 
 file(GLOB sources      main.c)
 
@@ -8,7 +8,7 @@ add_link_options("$<$<NOT:$<CONFIG:Debug>>:/DEBUG>")
 add_link_options("$<$<NOT:$<CONFIG:Debug>>:/OPT:REF>")
 add_link_options("$<$<NOT:$<CONFIG:Debug>>:/OPT:ICF>")
 
-add_executable(win32_window WIN32 ${sources})
+add_executable(win32_button WIN32 ${sources})
 
 # just for example add some compiler flags
-target_compile_options(win32_window PUBLIC /std:c17)
+target_compile_options(win32_button PUBLIC /std:c17)

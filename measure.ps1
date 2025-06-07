@@ -72,10 +72,10 @@ function Format-Folder($folder)
 
 function Measure-Folder($folder)
 {
-	ls $folder/c/build/Release/*.exe | Select-Object Name, Length
-	ls $folder/rust/target/release/*.exe | Select-Object Name, Length
-	ls $folder/naot/bin/Release/net10.0/win-x64/publish/*.exe | Select-Object Name, Length
-	ls $folder/go/out/*.exe | Select-Object Name, Length
+	ls $folder/c/build/Release/$folder.exe | Select-Object Name, Length
+	ls $folder/rust/target/release/$folder.exe | Select-Object Name, Length
+	ls $folder/naot/bin/Release/net10.0/win-x64/publish/$folder.exe | Select-Object Name, Length
+	ls $folder/go/out/$folder.exe | Select-Object Name, Length
 }
 
 if (-not $env:VCPKG_ROOT) {

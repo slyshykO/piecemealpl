@@ -192,14 +192,14 @@ let naotParams = vector [
     2117632.; // ZipFile
     1210368.; // CreateFile
     1157632.; // Win32Window
-    1157632.; // Win32Button
+    1158656.; // Win32Button
     1105408.; // PrintLine
 ]
 
 // Go values
 let goParams = vector [
     863744.; // Baseline
-    1283584.; // SumStrings
+    1270272.; // SumStrings
     1288704.; // ParseFloat
     1272832.; // StrReverse
     1283584.; // ToLower

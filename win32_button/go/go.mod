@@ -1,4 +1,4 @@
-module kant2002/piecemealpl/win32_window
+module kant2002/piecemealpl/win32_button
 
 go 1.21.4
 

@@ -9,7 +9,7 @@ using static Windows.Win32.PInvoke;
 
 unsafe internal class Program
 {
-    static IntPtr hInstance;
+    static SafeHandle hInstance;
     // Register the window class.
     const string CLASS_NAME = "Sample Window Class";
     private static void Main()
@@ -20,7 +20,7 @@ unsafe internal class Program
             WNDCLASSW wc = new WNDCLASSW();
 
             wc.lpfnWndProc = &WindowProc;
-            wc.hInstance = hInstance;
+            wc.hInstance = new HINSTANCE(hInstance.DangerousGetHandle());
             wc.lpszClassName = new PCWSTR(pClassName);
 
             RegisterClass(wc);
